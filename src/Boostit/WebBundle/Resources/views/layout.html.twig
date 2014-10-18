@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Quicktest</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/bundles/boostitweb/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bundles/boostitweb/css/main.css?date={{"now"|date('Ymd_His')}}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+        </ul>
+        <h3 class="text-muted">Quicktest</h3>
+      </div>
+      <div class="row marketing">
+        <div class="col-lg-12">            
+            {% block cart %}                  
+            {% endblock %}
+        </div>
+        <div class="col-lg-12">
+            <h4>Produkty</h4>
+            {% block products %}
+            {% endblock %}
+        </div>                
+      </div>
+
+      <div class="footer">
+        <p>&copy; boost it</p>
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

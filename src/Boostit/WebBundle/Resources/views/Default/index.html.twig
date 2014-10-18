@@ -1,0 +1,25 @@
+{% extends "BoostitWebBundle::layout.html.twig" %}
+{% set productsInCart = cartProducts and cartProducts|length > 0 ? true : false %}
+{% block cart %}
+    <h4>Koszyk {% if productsInCart %}<a href="{{path('clear_cookie')}}">(opróżnij koszyk)</a>{% endif %}</h4>
+    {% if productsInCart %}
+        <ul>
+        {% for product in cartProducts %}
+            <li>{{product.name}}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Koszyk jest pusty</p>
+    {% endif %}   
+{% endblock %}
+
+{% block products %}
+    <form class="form-horizontal" action="" method="POST">
+    {{ form_start(form) }}
+       {{ form_errors(form) }}
+       {{ form_row(form.products) }}
+       <input type="submit" class="btn btn-info" value="Dodaj"/>
+   {{ form_end(form) }}
+    </form>
+{% endblock %}
+

@@ -1,0 +1,6 @@
+# app/config/routing.yml
+
+boostit_web:
+    resource: "@BoostitWebBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /
